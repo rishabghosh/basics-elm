@@ -23,7 +23,11 @@ update action count =
             count + 1
 
         Decrement ->
-            count - 1
+            if count == 0 then
+                count
+
+            else
+                count - 1
 
 
 view : Int -> Html Action
