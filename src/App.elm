@@ -1,29 +1,28 @@
 module App exposing (..)
 
 import Browser
-import Html exposing (Html, div)
+import Html exposing (Html, div, text, button)
 import Html.Events exposing (onClick)
 
-init: number
+init: Int
 init = 0
 
 type Action = Increment | Decrement
 
+update : Action -> Int -> Int
+update action count =
+    case action of
+        Increment -> count + 1
+        Decrement -> count - 1 
 
-update : Action -> number -> number
-update msg model =
-    case msg of
-        Increment ->
-            model + 1
-
-        Decrement ->
-            model - 1 
-
-
-view : number -> Html Action
+view : Int -> Html Action
 view model = 
-    div[]
-    [Html.text ("App works, able to print something")]
+    div[] -- no args are taken by div
+    [
+        (button [(onClick Increment)] [(text "increment")]), -- two args are taken by button
+        (button [(onClick Decrement)] [(text "decrement")]), -- two args are taken by button
+        div [] [text (String.fromInt model)]
+    ]
 
 
 main =
