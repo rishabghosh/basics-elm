@@ -50,7 +50,7 @@ update action count =
 view : Int -> Html Action
 view model =
     div
-        viewPortStyle   
+        viewPortStyle
         [ div
             containerStyle
             [ button [ onClick Increment ] [ text "increment" ] -- two args are taken by button
