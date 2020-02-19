@@ -2,7 +2,7 @@ module App exposing (main)
 
 import Browser
 import Html exposing (Html, button, div, text)
-import Html.Attributes exposing (style)
+import Html.Attributes exposing (class, style)
 import Html.Events exposing (onClick)
 
 
@@ -50,9 +50,9 @@ update action count =
 view : Int -> Html Action
 view model =
     div
-        viewPortStyle
+        [ class "viewport" ]
         [ div
-            containerStyle
+            [class "container"]
             [ button [ onClick Increment ] [ text "increment" ] -- two args are taken by button
             , button [ onClick Decrement ] [ text "decrement" ] -- two args are taken by button
             , text (String.fromInt model)
