@@ -6,23 +6,6 @@ import Html.Attributes exposing (class, style)
 import Html.Events exposing (onClick)
 
 
-viewPortStyle =
-    [ style "height" "100vh"
-    , style "display" "flex"
-    , style "align-items" "center"
-    , style "justify-content" "center"
-    ]
-
-
-containerStyle =
-    [ style "height" "50%"
-    , style "width" "70%"
-    , style "display" "flex"
-    , style "justify-content" "space-evenly"
-    , style "align-items" "center"
-    ]
-
-
 init : Int
 init =
     0
@@ -52,7 +35,7 @@ view model =
     div
         [ class "viewport" ]
         [ div
-            [class "container"]
+            [ class "container" ]
             [ button [ onClick Increment ] [ text "increment" ] -- two args are taken by button
             , button [ onClick Decrement ] [ text "decrement" ] -- two args are taken by button
             , text (String.fromInt model)
